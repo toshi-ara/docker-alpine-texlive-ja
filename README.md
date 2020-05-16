@@ -1,4 +1,4 @@
-# paperist/alpine-texlive-ja
+# toshiara/alpine-texlive-ja
 
 [![Docker Automated build](https://img.shields.io/docker/automated/toshiara/alpine-texlive-ja.svg)](https://hub.docker.com/r/toshiara/alpine-texlive-ja/)
 [![Docker Image Size](https://images.microbadger.com/badges/image/toshiara/alpine-texlive-ja.svg)](https://microbadger.com/images/toshiara/alpine-texlive-ja "Get your own image badge on microbadger.com")
