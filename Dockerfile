@@ -1,10 +1,11 @@
-# Copyright (c) 2016 Kaito Udagawa
+]# Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2019 3846masa
 # Copyright (c) 2020 ARA Toshiaki
 # Released under the MIT license
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc:latest
+LABEL lastupdate=2020.9.30
 
 ENV PATH /usr/local/texlive/2020/bin/x86_64-linuxmusl:$PATH
 
