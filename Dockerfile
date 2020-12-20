@@ -27,7 +27,7 @@ RUN apk add --no-cache perl fontconfig-dev freetype-dev \
       collection-langjapanese \
       lualatex-math \
       xetex xecjk ctex \
-      latexmk && \
+      latexmk light-latex-make && \
     rm -fr /tmp/install-tl-unx
 
 WORKDIR /workdir
