@@ -5,12 +5,12 @@
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc:latest
-LABEL lastupdate=2020.9.30
+LABEL lastupdate=2020.12.20
 
 ENV PATH /usr/local/texlive/2020/bin/x86_64-linuxmusl:$PATH
 
-RUN apk add --no-cache curl perl fontconfig-dev freetype-dev && \
-    apk add --no-cache --virtual .fetch-deps xz tar wget && \
+RUN apk add --no-cache perl fontconfig-dev freetype-dev \
+                       curl wget lha tar xz ghostscript && \
     mkdir /tmp/install-tl-unx && \
     curl -L ftp://tug.org/historic/systems/texlive/2020/install-tl-unx.tar.gz | \
     tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
@@ -25,9 +25,10 @@ RUN apk add --no-cache curl perl fontconfig-dev freetype-dev && \
       collection-latexextra \
       collection-fontsrecommended \
       collection-langjapanese \
+      lualatex-math \
+      xetex xecjk ctex \
       latexmk && \
-    rm -fr /tmp/install-tl-unx && \
-    apk del .fetch-deps
+    rm -fr /tmp/install-tl-unx
 
 WORKDIR /workdir
 
