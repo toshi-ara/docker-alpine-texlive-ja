@@ -5,14 +5,14 @@
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc:latest
-LABEL lastupdate=2020.12.20
+LABEL lastupdate=2021.5.1
 
-ENV PATH /usr/local/texlive/2020/bin/x86_64-linuxmusl:$PATH
+ENV PATH /usr/local/texlive/2021/bin/x86_64-linuxmusl:$PATH
 
 RUN apk add --no-cache perl fontconfig-dev freetype-dev \
                        curl wget lha tar xz ghostscript && \
     mkdir /tmp/install-tl-unx && \
-    curl -L ftp://tug.org/historic/systems/texlive/2020/install-tl-unx.tar.gz | \
+    curl -L http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2021/install-tl-unx.tar.gz | \
     tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
     printf "%s\n" \
       "selected_scheme scheme-basic" \
